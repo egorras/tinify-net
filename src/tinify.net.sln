@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinify", "Tinify\Tinify.csproj", "{97180E50-B6B0-435A-B5A8-FCE369689552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinify.Tests", "Tinify.Tests\Tinify.Tests.csproj", "{A6DC4D46-33CF-41E3-B341-6779C94AB233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97180E50-B6B0-435A-B5A8-FCE369689552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97180E50-B6B0-435A-B5A8-FCE369689552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97180E50-B6B0-435A-B5A8-FCE369689552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97180E50-B6B0-435A-B5A8-FCE369689552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DC4D46-33CF-41E3-B341-6779C94AB233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DC4D46-33CF-41E3-B341-6779C94AB233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DC4D46-33CF-41E3-B341-6779C94AB233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DC4D46-33CF-41E3-B341-6779C94AB233}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
