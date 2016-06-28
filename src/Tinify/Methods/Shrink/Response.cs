@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Tinify.Methods.Shrink.ResponseInfo;
 
-namespace Tinify.Methods.Shrink.ResponseData
+namespace Tinify.Methods.Shrink
 {
     public class Response
     {

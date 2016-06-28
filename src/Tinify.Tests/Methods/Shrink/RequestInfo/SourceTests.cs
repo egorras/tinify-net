@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
+using Tinify.Methods.Shrink.RequestInfo;
 using Xunit;
-using Tinify.Methods.Shrink.RequestData;
 
-namespace Tinify.Tests.Methods.Shrink.RequestData
+namespace Tinify.Tests.Methods.Shrink.RequestInfo
 {
     public class SourceTests
     {

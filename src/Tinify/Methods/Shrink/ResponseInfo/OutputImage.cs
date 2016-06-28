@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Tinify.Methods.Shrink.ResponseData
+namespace Tinify.Methods.Shrink.ResponseInfo
 {
     public class OutputImage : Image
     {

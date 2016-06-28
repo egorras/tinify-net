@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Tinify.Methods.Shrink.RequestInfo;
 
-namespace Tinify.Methods.Shrink.RequestData
+namespace Tinify.Methods.Shrink
 {
     internal class Request
     {

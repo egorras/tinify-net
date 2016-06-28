@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using Tinify.Methods.Shrink.ResponseData;
+using Tinify.Methods.Shrink.ResponseInfo;
 using Xunit;
 
-namespace Tinify.Tests.Methods.Shrink.ResponseData
+namespace Tinify.Tests.Methods.Shrink.ResponseInfo
 {
     public class ImageTests
     {

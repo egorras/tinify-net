@@ -43,11 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITinifyClient.cs" />
-    <Compile Include="Methods\Shrink\RequestData\Request.cs" />
-    <Compile Include="Methods\Shrink\RequestData\Source.cs" />
-    <Compile Include="Methods\Shrink\ResponseData\Image.cs" />
-    <Compile Include="Methods\Shrink\ResponseData\OutputImage.cs" />
-    <Compile Include="Methods\Shrink\ResponseData\Response.cs" />
+    <Compile Include="Methods\Shrink\Request.cs" />
+    <Compile Include="Methods\Shrink\RequestInfo\Source.cs" />
+    <Compile Include="Methods\Shrink\ResponseInfo\Image.cs" />
+    <Compile Include="Methods\Shrink\ResponseInfo\OutputImage.cs" />
+    <Compile Include="Methods\Shrink\Response.cs" />
+    <Compile Include="NewtonsoftJsonSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TinifyClient.cs" />
   </ItemGroup>

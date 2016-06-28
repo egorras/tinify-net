@@ -1,7 +1,9 @@
-﻿namespace Tinify
+﻿using System.Threading.Tasks;
+
+namespace Tinify
 {
     public interface ITinifyClient
     {
-        Methods.Shrink.ResponseData.Response Shrink(string imageUrl);
+        Task<Methods.Shrink.Response> ShrinkAsync(string imageUrl);
     }
 }
