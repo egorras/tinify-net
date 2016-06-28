@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="Methods\Shrink\RequestData\RequestTests.cs" />
     <Compile Include="Methods\Shrink\RequestData\SourceTests.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\ImageTests.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\OutputImageTests.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\ResponseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

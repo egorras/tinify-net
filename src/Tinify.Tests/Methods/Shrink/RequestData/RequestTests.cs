@@ -9,8 +9,8 @@ namespace Tinify.Tests.Methods.Shrink.RequestData
         [Fact]
         internal static void Shrink_Request_Serialize_Valid()
         {
-            var source = new Request("http://test_url.com");
-            var json = JsonConvert.SerializeObject(source);
+            var request = new Request("http://test_url.com");
+            var json = JsonConvert.SerializeObject(request);
             Assert.Equal(@"{""source"":{""url"":""http://test_url.com""}}", json);
         }
     }

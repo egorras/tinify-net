@@ -40,14 +40,15 @@
   <ItemGroup>
     <Compile Include="Methods\Shrink\RequestData\Request.cs" />
     <Compile Include="Methods\Shrink\RequestData\Source.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\Image.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\OutputImage.cs" />
+    <Compile Include="Methods\Shrink\ResponseData\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Methods\Shrink\ResponseData\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

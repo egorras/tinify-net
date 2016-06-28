@@ -7,7 +7,7 @@ namespace Tinify.Tests.Methods.Shrink.RequestData
     public class SourceTests
     {
         [Fact]
-        internal static void Shrink_Source_Serialize_Valid()
+        internal static void Shrink_Request_Source_Serialize_Valid()
         {
             var source = new Source("http://test_url.com");
             var json = JsonConvert.SerializeObject(source);
