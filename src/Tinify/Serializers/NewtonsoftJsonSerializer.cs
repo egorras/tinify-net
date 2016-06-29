@@ -4,7 +4,7 @@ using RestSharp;
 using RestSharp.Serializers;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-namespace Tinify
+namespace Tinify.Serializers
 {
     internal class NewtonsoftJsonSerializer : ISerializer
     {

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Tinify.Tests.Methods.Shrink
 {
-    public class RequestTests
+    public class ShrinkRequestTests
     {
         [Fact]
         internal static void Shrink_Request_Serialize_Valid()

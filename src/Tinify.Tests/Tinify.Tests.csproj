@@ -68,12 +68,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Methods\Shrink\RequestTests.cs" />
+    <Compile Include="Methods\Shrink\ShrinkRequestTests.cs" />
     <Compile Include="Methods\Shrink\RequestInfo\SourceTests.cs" />
     <Compile Include="Methods\Shrink\ResponseInfo\ImageTests.cs" />
     <Compile Include="Methods\Shrink\ResponseInfo\OutputImageTests.cs" />
-    <Compile Include="Methods\Shrink\ResponseTests.cs" />
-    <Compile Include="Methods\TinifyClientTests.cs" />
+    <Compile Include="Methods\Shrink\ShrinkResponseTests.cs" />
+    <Compile Include="Client\TinifyClientTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

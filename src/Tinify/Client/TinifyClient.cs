@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
 using Tinify.Methods.Shrink;
+using Tinify.Serializers;
 
-namespace Tinify
+namespace Tinify.Client
 {
     /// <summary>
     /// Tinify API client. Allows you to compress and optimize JPEG and PNG images.
@@ -13,7 +14,6 @@ namespace Tinify
     public class TinifyClient : ITinifyClient
     {
         private readonly IRestClient restClient;
-        private readonly string apiKey;
 
         private const string ApiUrl = "https://api.tinify.com";
         private const string ShrinkUrl = "/shrink";
@@ -25,12 +25,26 @@ namespace Tinify
 
         internal TinifyClient(string apiKey, IRestClient restClient)
         {
-            this.apiKey = apiKey;
             this.restClient = restClient;
 
             SetupRestClient();
+            SetApiKey(apiKey);
         }
 
+        /// <summary>
+        /// Set API key to use Tinify API.
+        /// </summary>
+        /// <param name="apiKey">API key.</param>
+        public void SetApiKey(string apiKey)
+        {
+            restClient.Authenticator = new HttpBasicAuthenticator("api", apiKey);
+        }
+
+        /// <summary>
+        /// Compress image.
+        /// </summary>
+        /// <param name="shrinkRequest">URL to image.</param>
+        /// <returns>URL to compressed image.</returns>
         public async Task<ShrinkResponse> ShrinkAsync(ShrinkRequest shrinkRequest)
         {
             var request = new RestRequest(ShrinkUrl, Method.POST)
@@ -40,14 +54,13 @@ namespace Tinify
                 OnBeforeDeserialization = r => { r.ContentType = "application/json"; }
             };
             request.AddJsonBody(shrinkRequest);
-            var response = await restClient.ExecuteTaskAsync<Methods.Shrink.ShrinkResponse>(request).ConfigureAwait(false);
+            var response = await restClient.ExecuteTaskAsync<ShrinkResponse>(request).ConfigureAwait(false);
             return response.Data;
         }
 
         private void SetupRestClient()
         {
             restClient.BaseUrl = new Uri(ApiUrl);
-            restClient.Authenticator = new HttpBasicAuthenticator("api", apiKey);
         }
     }
 }

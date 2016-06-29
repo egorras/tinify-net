@@ -42,15 +42,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITinifyClient.cs" />
+    <Compile Include="Client\ITinifyClient.cs" />
     <Compile Include="Methods\Shrink\ShrinkRequest.cs" />
     <Compile Include="Methods\Shrink\RequestInfo\Source.cs" />
     <Compile Include="Methods\Shrink\ResponseInfo\Image.cs" />
     <Compile Include="Methods\Shrink\ResponseInfo\OutputImage.cs" />
     <Compile Include="Methods\Shrink\ShrinkResponse.cs" />
-    <Compile Include="NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Serializers\NewtonsoftJsonSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TinifyClient.cs" />
+    <Compile Include="Client\TinifyClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

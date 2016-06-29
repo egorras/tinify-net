@@ -2,17 +2,18 @@
 using Moq;
 using RestSharp;
 using RestSharp.Authenticators;
+using Tinify.Client;
 using Tinify.Methods.Shrink;
 using Xunit;
 
-namespace Tinify
+namespace Tinify.Tests.Client
 {
     public class TinifyClientTests
     {
         private const string ApiKey = "api_key";
 
         [Fact]
-        internal void Auth_header_should_be_set()
+        internal void Auth_header_should_be_set_on_init()
         {
             var restClient = new Mock<IRestClient>();
             restClient.SetupAllProperties();
