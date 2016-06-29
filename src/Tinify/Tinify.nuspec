@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TinifyApiClient</id>
+    <version>0.0.0.0</version>
+    <authors>Egor Raskhodchikov</authors>
+    <description>Tinify API client for .NET</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/raskhodchikov/tinify-net</projectUrl>
+    <licenseUrl>https://github.com/raskhodchikov/tinify-net/blob/master/LICENSE</licenseUrl>
+  </metadata>
+  <files>
+    <file src="bin\Release\*.dll" target="lib" />
+  </files>
+</package>
