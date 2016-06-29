@@ -18,14 +18,21 @@ assembly_info:
 
 before_build:
 - ps: >-
-  Set-Location -Path $env:sourceFolder
-  nuget restore
-  Set-Location -Path ..
-  # Patch NuGet package version into .nuspec file
-  $nuspecPath = "$env:APPVEYOR_BUILD_FOLDER\$env:sourceFolder\$env:projectName\$env:projectName.nuspec"
-  $nuspec = [xml](Get-Content $nuspecPath)
-  $nuspec.package.metadata.version = $env:APPVEYOR_BUILD_VERSION
-  $nuspec.Save($nuspecPath)
+    Set-Location -Path $env:sourceFolder
+
+    nuget restore
+
+    Set-Location -Path ..
+
+    # Patch NuGet package version into .nuspec file
+
+    $nuspecPath = "$env:APPVEYOR_BUILD_FOLDER\$env:sourceFolder\$env:projectName\$env:projectName.nuspec"
+
+    $nuspec = [xml](Get-Content $nuspecPath)
+
+    $nuspec.package.metadata.version = $env:APPVEYOR_BUILD_VERSION
+
+    $nuspec.Save($nuspecPath)
 
 build:
   verbosity: minimal  
