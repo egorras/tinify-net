@@ -48,6 +48,5 @@ deploy:
   - provider: NuGet
     api_key: $(nugetApiKey)
     skip_symbols: false
-    symbol_server: nuget.smbsrc.net
     artifact: /.*\.nupkg/
 
