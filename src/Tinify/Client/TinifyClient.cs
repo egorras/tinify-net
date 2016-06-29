@@ -18,6 +18,10 @@ namespace Tinify.Client
         private const string ApiUrl = "https://api.tinify.com";
         private const string ShrinkUrl = "/shrink";
 
+        /// <summary>
+        /// Initialize Tinify API client.
+        /// </summary>
+        /// <param name="apiKey">API key.</param>
         public TinifyClient(string apiKey)
             : this(apiKey, new RestClient())
         {

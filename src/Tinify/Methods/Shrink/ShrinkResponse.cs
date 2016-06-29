@@ -3,6 +3,9 @@ using Tinify.Methods.Shrink.ResponseInfo;
 
 namespace Tinify.Methods.Shrink
 {
+    /// <summary>
+    /// Container for deserialized data sent back from Tinify API shrink method.
+    /// </summary>
     public class ShrinkResponse
     {
         [JsonProperty("input")]
