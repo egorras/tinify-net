@@ -1,0 +1,46 @@
+version: 1.0.0.{build}
+
+configuration: Release
+
+environment:
+  sourceFolder: src
+  solutionName: tinify.net.sln
+  projectName: Tinify
+  nugetApiKey:
+    secure: ZewpmA+rJPVO5I9JfzSNV4h7B1Qk6tL+udqkmlRQbtUAvSXtj+XGCFFTs9fv4hkP
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+before_build:
+- ps: >-
+  Set-Location -Path $env:sourceFolder
+  nuget restore
+  Set-Location -Path ..
+  # Patch NuGet package version into .nuspec file
+  $nuspecPath = "$env:APPVEYOR_BUILD_FOLDER\$env:sourceFolder\$env:projectName\$env:projectName.nuspec"
+  $nuspec = [xml](Get-Content $nuspecPath)
+  $nuspec.package.metadata.version = $env:APPVEYOR_BUILD_VERSION
+  $nuspec.Save($nuspecPath)
+
+build:
+  verbosity: minimal  
+  project: $(sourceFolder)\$(solutionName)
+  publish_nuget: true
+  publish_nuget_symbols: true
+
+artifacts:
+  - path: $(sourceFolder)\$(projectName)\bin\$(configuration)\
+    name: $(projectName)-v$(APPVEYOR_BUILD_VERSION)
+
+deploy:
+  - provider: NuGet
+    server: https://www.nuget.org
+    api_key: $(nugetApiKey)
+    skip_symbols: false
+    symbol_server: nuget.smbsrc.net
+    artifact: $(projectName).$(APPVEYOR_BUILD_VERSION).nupkg
