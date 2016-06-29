@@ -2,6 +2,7 @@
 using Moq;
 using RestSharp;
 using RestSharp.Authenticators;
+using Tinify.Methods.Shrink;
 using Xunit;
 
 namespace Tinify
@@ -33,17 +34,18 @@ namespace Tinify
         {
             var restClient = new Mock<IRestClient>();
             restClient
-                .Setup(r => r.ExecuteTaskAsync<Methods.Shrink.Response>(It.IsAny<IRestRequest>()))
-                .Returns(Task.FromResult((IRestResponse<Methods.Shrink.Response>) new RestResponse<Methods.Shrink.Response>
+                .Setup(r => r.ExecuteTaskAsync<ShrinkResponse>(It.IsAny<IRestRequest>()))
+                .Returns(Task.FromResult((IRestResponse<ShrinkResponse>) new RestResponse<ShrinkResponse>
                 {
-                    Data = new Methods.Shrink.Response
+                    Data = new ShrinkResponse
                     {
                         Message = "message"
                     }
                 }));
 
             var tinifyClient = new TinifyClient(ApiKey, restClient.Object);
-            var response = await tinifyClient.ShrinkAsync("image_url.jpg").ConfigureAwait(false);
+            var request = new ShrinkRequest("image_url.jpg");
+            var response = await tinifyClient.ShrinkAsync(request).ConfigureAwait(false);
             Assert.Equal("message", response.Message);
         }
     }

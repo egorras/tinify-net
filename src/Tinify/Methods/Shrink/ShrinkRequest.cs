@@ -3,9 +3,9 @@ using Tinify.Methods.Shrink.RequestInfo;
 
 namespace Tinify.Methods.Shrink
 {
-    internal class Request
+    public class ShrinkRequest
     {
-        public Request(string sourceUrl)
+        public ShrinkRequest(string sourceUrl)
         {
             Source = new Source(sourceUrl);
         }

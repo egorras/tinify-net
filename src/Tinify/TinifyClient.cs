@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
+using Tinify.Methods.Shrink;
 
 namespace Tinify
 {
@@ -30,17 +31,16 @@ namespace Tinify
             SetupRestClient();
         }
 
-        public async Task<Methods.Shrink.Response> ShrinkAsync(string imageUrl)
+        public async Task<ShrinkResponse> ShrinkAsync(ShrinkRequest shrinkRequest)
         {
-            var requestData = new Methods.Shrink.Request(imageUrl);
             var request = new RestRequest(ShrinkUrl, Method.POST)
             {
                 RequestFormat = DataFormat.Json,
                 JsonSerializer = NewtonsoftJsonSerializer.Default,
                 OnBeforeDeserialization = r => { r.ContentType = "application/json"; }
             };
-            request.AddJsonBody(requestData);
-            var response = await restClient.ExecuteTaskAsync<Methods.Shrink.Response>(request).ConfigureAwait(false);
+            request.AddJsonBody(shrinkRequest);
+            var response = await restClient.ExecuteTaskAsync<Methods.Shrink.ShrinkResponse>(request).ConfigureAwait(false);
             return response.Data;
         }
 

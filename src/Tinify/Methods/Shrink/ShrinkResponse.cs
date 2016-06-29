@@ -3,7 +3,7 @@ using Tinify.Methods.Shrink.ResponseInfo;
 
 namespace Tinify.Methods.Shrink
 {
-    public class Response
+    public class ShrinkResponse
     {
         [JsonProperty("input")]
         public Image Input { get; set; }

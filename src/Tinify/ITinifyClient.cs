@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Tinify.Methods.Shrink;
 
 namespace Tinify
 {
     public interface ITinifyClient
     {
-        Task<Methods.Shrink.Response> ShrinkAsync(string imageUrl);
+        Task<ShrinkResponse> ShrinkAsync(ShrinkRequest shrinkRequest);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Tinify.Methods.Shrink.RequestInfo
 {
-    internal class Source
+    public class Source
     {
         public Source(string url)
         {
